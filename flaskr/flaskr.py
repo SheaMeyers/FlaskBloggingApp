@@ -6,10 +6,10 @@ from contextlib import closing
 
 # configuration
 DATABASE = '/tmp/flaskr.db'
-DEBUG = True
+DEBUG = False
 SECRET_KEY = 'development key'
 USERNAME = 'admin'
-PASSWORD = 'default'
+PASSWORD = 'password'
 
 # create our little application :)
 app = Flask(__name__)
@@ -58,9 +58,9 @@ def add_entry():
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != app.config['USERNAME']:
+        if request.form['username'] != USERNAME:
             error = 'Invalid username'
-        elif request.form['password'] != app.config['PASSWORD']:
+        elif request.form['password'] != PASSWORD:
             error = 'Invalid password'
         else:
             session['logged_in'] = True
@@ -75,4 +75,6 @@ def logout():
     return redirect(url_for('show_entries'))
 
 if __name__ == '__main__':
+    app.secret_key = SECRET_KEY
+    app.debug = DEBUG
     app.run()
