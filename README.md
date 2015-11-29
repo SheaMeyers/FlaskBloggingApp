@@ -1,4 +1,4 @@
-A simple bloggin web application built on the Flask microframework. http://flask.pocoo.org/
+A simple blogging web application built on the Flask microframework. http://flask.pocoo.org/
 
 To run the project:
 
