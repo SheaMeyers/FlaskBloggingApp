@@ -1,4 +1,4 @@
-A simple bloggin web application built on django framework. http://flask.pocoo.org/
+A simple bloggin web application built on flask framework. http://flask.pocoo.org/
 
 To run the project:
 
